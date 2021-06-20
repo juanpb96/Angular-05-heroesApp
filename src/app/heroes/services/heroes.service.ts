@@ -30,4 +30,16 @@ export class HeroesService {
   getSuggestions( term: string ): Observable<Hero[]> {
     return this.http.get<Hero[]>( `${this.apiUrl}/heroes?q=${term}&_limit=6` );
   }
+
+  addHero( hero: Hero ): Observable<Hero> {
+    return this.http.post<Hero>( `${this.apiUrl}/heroes`, hero );
+  }
+
+  updateHero( hero: Hero ): Observable<Hero> {
+    return this.http.put<Hero>( `${this.apiUrl}/heroes/${ hero.id }`, hero );
+  }
+
+  deleteHero( id: string ): Observable<any> {
+    return this.http.delete<any>( `${this.apiUrl}/heroes/${ id }` );
+  }
 }
