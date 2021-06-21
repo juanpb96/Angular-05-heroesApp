@@ -1,1 +1,6 @@
-<p>login works!</p>
+<mat-grid-list cols="1">
+    <mat-grid-tile>
+        <button mat-raised-button (click)="login()" color="primary">Sign In</button>
+        <button mat-raised-button (click)="withoutLogin()" color="warn">Without Login</button>
+    </mat-grid-tile>
+</mat-grid-list>
